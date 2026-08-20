@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Superior ISCE | Carreras Terciarias y Secundario en Paraná</title>
+    <meta name="description" content="Estudiá tecnicaturas superiores con título oficial en Paraná o finalizá el secundario para adultos (ESJA). Más de 30 años de trayectoria. ¡Inscribite hoy!">
+    <meta name="keywords" content="carreras parana, terciarios parana, seguridad e higiene parana, esja parana, secundario adultos entre rios, isce">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Instituto Superior de Capacitación Empresaria (ISCE)",
+      "alternateName": "ISCE D-123",
+      "url": "https://www.isce.edu.ar",
+      "logo": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=300",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "San Juan 826",
+        "addressLocality": "Paraná",
+        "addressRegion": "Entre Ríos",
+        "postalCode": "E3100",
+        "addressCountry": "AR"
+      },
+      "telephone": "+543434220096",
+      "sameAs": [
+        "https://www.facebook.com/isceparana",
+        "https://www.instagram.com/isceparana"
+      ]
+    }
+    </script>
+
+    <style>
+        .gradient-hero {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 58, 138, 0.85) 100%), 
+                        url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+        .smooth-scroll { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans smooth-scroll flex flex-col min-h-screen">
+
+    <!-- TOP BAR INFO -->
+    <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-4 flex-wrap">
+                <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-blue-400"></i> San Juan 826, Paraná, Entre Ríos</span>
+                <span class="flex items-center gap-1"><i data-lucide="phone" class="w-3.5 h-3.5 text-blue-400"></i> (0343) 422-0096</span>
+                <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-blue-400"></i> Lunes a Viernes 16:00 - 21:00 hs</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/5493434257344" target="_blank" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1 font-semibold">
+                    <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp Inscripciones
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER & NAVIGATION -->
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <!-- LOGO -->
+            <a href="#" onclick="showSection('inicio')" class="flex items-center gap-3 group">
+                <div class="bg-blue-900 text-white p-2.5 rounded-lg font-black text-xl tracking-wider shadow">
+                    ISCE
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-slate-900 leading-tight group-hover:text-blue-700 transition">Instituto ISCE</span>
+                    <span class="text-xs text-slate-500 font-medium">D-123 · Superior y ESJA</span>
+                </div>
+            </a>
+
+            <!-- DESKTOP NAV -->
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-700">
+                <button onclick="showSection('inicio')" class="nav-link hover:text-blue-700 transition px-2 py-1">Inicio</button>
+                <button onclick="showSection('institucional')" class="nav-link hover:text-blue-700 transition px-2 py-1">Institucional</button>
+                <button onclick="showSection('carreras')" class="nav-link hover:text-blue-700 transition px-2 py-1">Carreras Terciarias</button>
+                <button onclick="showSection('esja')" class="nav-link hover:text-blue-700 transition px-2 py-1">Secundario (ESJA)</button>
+                <button onclick="showSection('blog')" class="nav-link hover:text-blue-700 transition px-2 py-1">Novedades / Blog</button>
+                <button onclick="showSection('contacto')" class="nav-link hover:text-blue-700 transition px-2 py-1">Contacto</button>
+            </nav>
+
+            <!-- RIGHT CTA BUTTONS -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="https://campus.isce.edu.ar" target="_blank" rel="noopener" class="text-xs font-bold text-slate-700 hover:text-blue-700 border border-slate-300 hover:border-blue-700 px-3 py-2 rounded-lg transition flex items-center gap-1">
+                    <i data-lucide="graduation-cap" class="w-4 h-4"></i> Campus Virtual
+                </a>
+                <button onclick="openModalInscripcion()" class="bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold px-4 py-2.5 rounded-lg shadow transition flex items-center gap-1.5">
+                    <i data-lucide="edit-3" class="w-4 h-4"></i> Inscribirme
+                </button>
+            </div>
+
+            <!-- MOBILE MENU BTN -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-slate-700 hover:text-blue-700">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- MOBILE MENU DROPDOWN -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-3">
+            <button onclick="showSection('inicio'); toggleMobileMenu()" class="block w-full text-left font-semibold text-slate-700 hover:text-blue-700 py-2">Inicio</button>
+            <button onclick="showSection('institucional'); toggleMobileMenu()" class="block w-full text-left font-semibold text-slate-700 hover:text-blue-700 py-2">Institucional</button>
+            <button onclick="showSection('carreras'); toggleMobileMenu()" class="block w-full text-left font-semibold text-slate-700 hover:text-blue-700 py-2">Carreras Terciarias</button>
+            <button onclick="showSection('esja'); toggleMobileMenu()" class="block w-full text-left font-semibold text-slate-700 hover:text-blue-700 py-2">Secundario (ESJA)</button>
+            <button onclick="showSection('blog'); toggleMobileMenu()" class="block w-full text-left font-semibold text-slate-700 hover:text-blue-700 py-2">Novedades / Blog</button>
+            <button onclick="showSection('contacto'); toggleMobileMenu()" class="block w-full text-left font-semibold text-slate-700 hover:text-blue-700 py-2">Contacto</button>
+            <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+                <a href="https://campus.isce.edu.ar" target="_blank" class="w-full text-center bg-slate-100 text-slate-800 font-bold py-2.5 rounded-lg text-sm">Acceso Campus Virtual</a>
+                <button onclick="openModalInscripcion(); toggleMobileMenu()" class="w-full text-center bg-blue-700 text-white font-bold py-2.5 rounded-lg text-sm">Inscribirme Ahora</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT SECTIONS (SPA) -->
+    <main class="flex-grow">
+
+        <!-- ================= INICIO ================= -->
+        <section id="sec-inicio" class="content-section">
+            <!-- HERO BANNER -->
+            <div class="gradient-hero text-white py-20 md:py-28 px-4">
+                <div class="max-w-5xl mx-auto text-center space-y-6">
+                    <span class="inline-block bg-blue-500/30 text-blue-200 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-blue-400/30">
+                        🎓 Inscripciones Abiertas · Ciclo Lectivo D-123 en Paraná
+                    </span>
+                    <h1 class="text-3xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+                        Impulsá tu Futuro Profesional con Títulos de Validez Nacional
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-200 max-w-3xl mx-auto font-normal leading-relaxed">
+                        Más de <span id="years-calc" class="font-bold text-white">30</span> años formando técnicos superiores y egresados secundarios en Paraná. Cursado presencial vespertino diseñado para adaptar tu estudio al trabajo diario.
+                    </p>
+                    <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <button onclick="openModalInscripcion()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 text-base flex items-center justify-center gap-2">
+                            <i data-lucide="edit-3" class="w-5 h-5"></i> Inscribirme Ahora
+                        </button>
+                        <a href="https://wa.me/5493434257344?text=Hola!%20Quiero%20consultar%20aranceles%20e%20información%20de%20carreras" target="_blank" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 text-base flex items-center justify-center gap-2">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i> Consultar Aranceles (WhatsApp)
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HIGHLIGHT STATS -->
+            <div class="bg-blue-900 text-white py-10 px-4 shadow-inner">
+                <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="p-4">
+                        <div class="text-3xl md:text-4xl font-extrabold text-blue-300 mb-1">+<span class="years-calc-val">30</span> Años</div>
+                        <div class="text-xs md:text-sm text-slate-300 font-medium">De Trayectoria Educativa</div>
+                    </div>
+                    <div class="p-4">
+                        <div class="text-3xl md:text-4xl font-extrabold text-blue-300 mb-1">100%</div>
+                        <div class="text-xs md:text-sm text-slate-300 font-medium">Títulos de Validez Nacional</div>
+                    </div>
+                    <div class="p-4">
+                        <div class="text-3xl md:text-4xl font-extrabold text-blue-300 mb-1">3 Años</div>
+                        <div class="text-xs md:text-sm text-slate-300 font-medium">Duración Tecnicaturas</div>
+                    </div>
+                    <div class="p-4">
+                        <div class="text-3xl md:text-4xl font-extrabold text-blue-300 mb-1">ESJA</div>
+                        <div class="text-xs md:text-sm text-slate-300 font-medium">Secundario para Adultos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARRERAS RESUMEN -->
+            <div class="py-16 px-4 max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl font-extrabold text-slate-900 mb-3">Oferta Académica Destacada</h2>
+                    <p class="text-slate-600 text-base">Planes de estudio prácticos diseñados para insertarte rápidamente en el mercado laboral técnico y empresarial.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="carreras-grid-home">
+                    <!-- CARDS GENERATED BY JS -->
+                </div>
+
+                <div class="text-center mt-12">
+                    <button onclick="showSection('carreras')" class="inline-flex items-center gap-2 text-blue-700 hover:text-blue-900 font-bold text-lg hover:underline">
+                        Ver todas las carreras y planes de estudio <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- POR QUÉ ELEGIR ISCE -->
+            <div class="bg-slate-100 py-16 px-4 border-y border-slate-200">
+                <div class="max-w-7xl mx-auto">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6">
+                            <span class="text-blue-700 font-bold text-xs uppercase tracking-wider">Excelencia e Innovación</span>
+                            <h2 class="text-3xl font-extrabold text-slate-900 leading-tight">¿Por qué estudiar en el Instituto ISCE en Paraná?</h2>
+                            <p class="text-slate-600 leading-relaxed">
+                                En ISCE combinamos una sólida formación teórica con prácticas profesionales directas. Acompañamos a nuestros estudiantes desde el primer día para potenciar su inserción laboral en empresas públicas y privadas de Entre Ríos.
+                            </p>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <div class="bg-blue-100 text-blue-700 p-2 rounded-lg mt-1"><i data-lucide="award" class="w-5 h-5"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900">Títulos Oficiales Oficiales (D-123)</h4>
+                                        <p class="text-sm text-slate-600">Aprobados por el Consejo General de Educación con alcance nacional.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="bg-blue-100 text-blue-700 p-2 rounded-lg mt-1"><i data-lucide="clock" class="w-5 h-5"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900">Horarios Compatibles con el Trabajo</h4>
+                                        <p class="text-sm text-slate-600">Cursado vespertino pensado para quienes trabajan o tienen responsabilidades diarias.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="bg-blue-100 text-blue-700 p-2 rounded-lg mt-1"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900">Sede Céntrica Accesible</h4>
+                                        <p class="text-sm text-slate-600">Ubicación privilegiada en el centro de la ciudad de Paraná (San Juan 826).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Alumnos ISCE Paraná" class="rounded-2xl shadow-xl w-full object-cover h-96">
+                            <div class="absolute -bottom-6 -left-6 bg-blue-900 text-white p-6 rounded-xl shadow-lg hidden sm:block max-w-xs">
+                                <p class="text-2xl font-black text-blue-300 mb-1">Inscripciones Abiertas</p>
+                                <p class="text-xs text-slate-300">Asegurá tu lugar para el próximo ciclo lectivo. Vacantes limitadas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= INSTITUCIONAL ================= -->
+        <section id="sec-institucional" class="content-section hidden">
+            <div class="bg-slate-900 text-white py-12 px-4">
+                <div class="max-w-5xl mx-auto text-center">
+                    <h1 class="text-3xl md:text-4xl font-extrabold">Institucional - ISCE D-123</h1>
+                    <p class="text-slate-300 mt-2 text-base">Más de tres décadas formando profesionales con valores y excelencia en Entre Ríos.</p>
+                </div>
+            </div>
+
+            <div class="py-16 px-4 max-w-5xl mx-auto space-y-12">
+                <!-- HISTORIA -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">Nuestra Historia</h2>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            Fundado en Paraná, el **Instituto Superior de Capacitación Empresaria (D-123)** nació con la firme convicción de brindar respuestas educativas concretas a las necesidades del sector productivo y gubernamental de la región.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed">
+                            A lo largo de más de 30 años de labor ininterrumpida, miles de graduados han pasado por nuestras aulas, consolidándose como técnicos superiores de excelencia en empresas, organismos públicos y emprendimientos propios.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=800&q=80" alt="Edificio institucional" class="rounded-xl shadow-md w-full h-72 object-cover">
+                    </div>
+                </div>
+
+                <!-- MISIÓN Y VISIÓN -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-blue-50 border border-blue-200 p-8 rounded-xl space-y-3">
+                        <div class="text-blue-700"><i data-lucide="target" class="w-8 h-8"></i></div>
+                        <h3 class="text-xl font-bold text-slate-900">Nuestra Misión</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Formar técnicos superiores y egresados secundarios con sólidos conocimientos éticos, científicos y prácticos, capacitados para adaptarse activamente a las demandas del mercado laboral actual.
+                        </p>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 p-8 rounded-xl space-y-3">
+                        <div class="text-emerald-700"><i data-lucide="eye" class="w-8 h-8"></i></div>
+                        <h3 class="text-xl font-bold text-slate-900">Nuestra Visión</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Ser reconocidos como la institución técnica de referencia en Entre Ríos por la calidad académica de nuestros docentes, la actualización constante de nuestros planes de estudio y el compromiso social con nuestra comunidad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CARRERAS TERCIARIAS ================= -->
+        <section id="sec-carreras" class="content-section hidden">
+            <div class="bg-slate-900 text-white py-12 px-4">
+                <div class="max-w-5xl mx-auto text-center">
+                    <h1 class="text-3xl md:text-4xl font-extrabold">Carreras Terciarias Superiores</h1>
+                    <p class="text-slate-300 mt-2 text-base">Títulos Oficiales con Validez Nacional. Duración 3 años.</p>
+                </div>
+            </div>
+
+            <div class="py-16 px-4 max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="carreras-grid-full">
+                    <!-- GENERATED VIA JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECUNDARIO (ESJA) ================= -->
+        <section id="sec-esja" class="content-section hidden">
+            <div class="bg-blue-900 text-white py-12 px-4">
+                <div class="max-w-5xl mx-auto text-center">
+                    <span class="bg-blue-700 text-blue-100 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">Plan Oficial para Adultos</span>
+                    <h1 class="text-3xl md:text-4xl font-extrabold mt-2">Secundario ESJA para Jóvenes y Adultos</h1>
+                    <p class="text-blue-200 mt-2 text-base">Orientación en Economía y Administración. Finalizá tu secundario sin pausar tu vida laboral.</p>
+                </div>
+            </div>
+
+            <div class="py-16 px-4 max-w-5xl mx-auto space-y-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4">
+                        <h2 class="text-2xl font-bold text-slate-900">Terminá la Secundaria y Agrandá tus Oportunidades</h2>
+                        <p class="text-slate-600 leading-relaxed">
+                            El plan ESJA del ISCE está especialmente estructurado para adultos que necesitan completar el nivel secundario con horarios flexibles, acompañamiento docente cercano y título oficial habilitante para empleos de calidad o carreras universitarias.
+                        </p>
+                        <ul class="space-y-2 text-slate-700 text-sm">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i> Cursado presencial vespertino (no interfiere con tu jornada laboral).</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i> Orientación práctica en Economía, Administración y Herramientas Digitales.</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i> Cuerpo docente con pedagogía adaptada a estudiantes adultos.</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i> Título secundario oficial aprobado por el Consejo General de Educación (CGE).</li>
+                        </ul>
+                        <div class="pt-4">
+                            <button onclick="openModalInscripcion('Secundario ESJA')" class="bg-blue-700 text-white font-bold px-6 py-3 rounded-lg shadow hover:bg-blue-800 transition">
+                                Inscribirme en ESJA
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" alt="Secundario adultos Paraná" class="rounded-xl shadow-lg w-full h-80 object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= BLOG / NOVEDADES ================= -->
+        <section id="sec-blog" class="content-section hidden">
+            <div class="bg-slate-900 text-white py-12 px-4">
+                <div class="max-w-5xl mx-auto text-center">
+                    <h1 class="text-3xl md:text-4xl font-extrabold">Novedades y Artículos Educativos</h1>
+                    <p class="text-slate-300 mt-2 text-base">Información, orientación vocacional y mercado laboral en Entre Ríos.</p>
+                </div>
+            </div>
+
+            <div class="py-16 px-4 max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- BLOG ITEM 1 -->
+                    <article class="bg-white rounded-xl shadow border border-slate-200 overflow-hidden flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Seguridad e higiene laboral" class="h-48 w-full object-cover">
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div class="space-y-2">
+                                <span class="text-xs font-bold text-blue-700 uppercase">Salida Laboral</span>
+                                <h3 class="text-xl font-bold text-slate-900 leading-snug">
+                                    Por qué estudiar Seguridad e Higiene es una de las carreras más demandadas en Entre Ríos
+                                </h3>
+                                <p class="text-sm text-slate-600 line-clamp-3">
+                                    Con la constante actualización de normativas industriales y de prevención de riesgos, los técnicos en Higiene y Seguridad son requeridos obligatoriamente en empresas públicas, fábricas y obras.
+                                </p>
+                            </div>
+                            <button onclick="alert('Artículo completo optimizado para SEO disponible en el panel de gestión.')" class="text-blue-700 font-bold text-sm hover:underline self-start">Leer artículo completo →</button>
+                        </div>
+                    </article>
+
+                    <!-- BLOG ITEM 2 -->
+                    <article class="bg-white rounded-xl shadow border border-slate-200 overflow-hidden flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="Terminar el secundario adultos" class="h-48 w-full object-cover">
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div class="space-y-2">
+                                <span class="text-xs font-bold text-emerald-700 uppercase">Educación de Adultos</span>
+                                <h3 class="text-xl font-bold text-slate-900 leading-snug">
+                                    Ventajas de terminar el secundario para adultos (ESJA) mientras trabajás
+                                </h3>
+                                <p class="text-sm text-slate-600 line-clamp-3">
+                                    Completar la secundaria abre puertas a mejores ascensos laborales y habilita la posibilidad de continuar una carrera terciaria corta. Conocé cómo organizarte.
+                                </p>
+                            </div>
+                            <button onclick="alert('Artículo completo optimizado para SEO disponible en el panel de gestión.')" class="text-blue-700 font-bold text-sm hover:underline self-start">Leer artículo completo →</button>
+                        </div>
+                    </article>
+
+                    <!-- BLOG ITEM 3 -->
+                    <article class="bg-white rounded-xl shadow border border-slate-200 overflow-hidden flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Carreras cortas 3 años" class="h-48 w-full object-cover">
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div class="space-y-2">
+                                <span class="text-xs font-bold text-indigo-700 uppercase">Orientación Vocacional</span>
+                                <h3 class="text-xl font-bold text-slate-900 leading-snug">
+                                    5 razones para elegir una carrera técnica corta de 3 años
+                                </h3>
+                                <p class="text-sm text-slate-600 line-clamp-3">
+                                    Las tecnicaturas superiores permiten obtener un título oficial universitario/terciario en menor tiempo, enfocándose en la práctica profesional directa.
+                                </p>
+                            </div>
+                            <button onclick="alert('Artículo completo optimizado para SEO disponible en el panel de gestión.')" class="text-blue-700 font-bold text-sm hover:underline self-start">Leer artículo completo →</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACTO ================= -->
+        <section id="sec-contacto" class="content-section hidden">
+            <div class="bg-slate-900 text-white py-12 px-4">
+                <div class="max-w-5xl mx-auto text-center">
+                    <h1 class="text-3xl md:text-4xl font-extrabold">Contactate con el Instituto ISCE</h1>
+                    <p class="text-slate-300 mt-2 text-base">Estamos listos para asesorarte sobre inscripciones, equivalencias y promociones vigentes.</p>
+                </div>
+            </div>
+
+            <div class="py-16 px-4 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- FORM -->
+                <div class="bg-white p-8 rounded-xl shadow-md border border-slate-200">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-2">Envianos tu Consulta</h2>
+                    <p class="text-xs text-slate-500 mb-6">Te respondemos en menos de 24 horas hábiles directamente a tu WhatsApp o correo.</p>
+                    <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nombre y Apellido *</label>
+                            <input type="text" required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-blue-600 outline-none" placeholder="Juan Pérez">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Teléfono / WhatsApp *</label>
+                                <input type="tel" required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-blue-600 outline-none" placeholder="343 1234567">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Email *</label>
+                                <input type="email" required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-blue-600 outline-none" placeholder="juan@ejemplo.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Carrera de Interés *</label>
+                            <select required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-blue-600 outline-none">
+                                <option value="">Seleccionar propuesta...</option>
+                                <option value="Seguridad e Higiene">Seguridad, Higiene y Ambiente</option>
+                                <option value="Recursos Humanos">Administración de RRHH</option>
+                                <option value="Gestión Ambiental">Gestión Ambiental</option>
+                                <option value="Administración de Empresas">Administración de Empresas</option>
+                                <option value="Comercio Internacional">Comercio Internacional</option>
+                                <option value="Marketing y Salud">Marketing y Serv. de Salud</option>
+                                <option value="ESJA Secundario">Secundario Adultos (ESJA)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Mensaje / Consulta</label>
+                            <textarea rows="3" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-blue-600 outline-none" placeholder="Consultar por aranceles, requisitos u horarios..."></textarea>
+                        </div>
+
+                        <!-- LEY 25.326 PRIVACY CHECKBOX -->
+                        <div class="pt-2">
+                            <label class="flex items-start gap-2.5 cursor-pointer">
+                                <input type="checkbox" required class="mt-1 rounded text-blue-600 focus:ring-blue-500 h-4 w-4">
+                                <span class="text-xs text-slate-500 leading-normal">
+                                    Acepto el tratamiento de mis datos personales para recibir información académica del ISCE, en conformidad con la <strong>Ley N° 25.326 de Protección de Datos Personales</strong>.
+                                </span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 rounded-lg shadow transition">
+                            Enviar Consulta Directa
+                        </button>
+                    </form>
+                </div>
+
+                <!-- INFO & MAP -->
+                <div class="space-y-8">
+                    <div class="bg-slate-100 p-8 rounded-xl border border-slate-200 space-y-6">
+                        <h2 class="text-2xl font-bold text-slate-900">Sede Institucional</h2>
+                        <div class="space-y-4 text-sm text-slate-700">
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-blue-700 mt-0.5"></i>
+                                <div>
+                                    <strong class="block text-slate-900">Dirección:</strong>
+                                    San Juan 826, Paraná, Entre Ríos (CP E3100).
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="phone" class="w-5 h-5 text-blue-700 mt-0.5"></i>
+                                <div>
+                                    <strong class="block text-slate-900">Teléfono Fijo:</strong>
+                                    (0343) 422-0096
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="message-circle" class="w-5 h-5 text-emerald-600 mt-0.5"></i>
+                                <div>
+                                    <strong class="block text-slate-900">WhatsApp Oficial:</strong>
+                                    +54 9 343 425-7344
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="mail" class="w-5 h-5 text-blue-700 mt-0.5"></i>
+                                <div>
+                                    <strong class="block text-slate-900">Correo Electrónico:</strong>
+                                    info@isce.edu.ar
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MAP MOCKUP -->
+                    <div class="bg-slate-200 rounded-xl overflow-hidden h-64 border border-slate-300 relative flex items-center justify-center">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.18921894269!2d-60.5298157!3d-31.733979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b45281533036e5%3A0x6b7bd48aa825f617!2sSan%20Juan%20826%2C%20E3100%20Paran%C3%A1%2C%20Entre%20R%C3%ADos!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-12 px-4 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="space-y-3">
+                <div class="flex items-center gap-2 text-white font-bold text-lg">
+                    <span class="bg-blue-600 text-white px-2 py-0.5 rounded text-sm">ISCE</span>
+                    Instituto ISCE D-123
+                </div>
+                <p class="text-slate-400 leading-relaxed">
+                    Instituto Superior de Capacitación Empresaria y Escuela Secundaria para Jóvenes y Adultos en Paraná, Entre Ríos.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-xs">Propuesta Académica</h4>
+                <ul class="space-y-1.5">
+                    <li><a href="#" onclick="showSection('carreras')" class="hover:text-white">Seguridad e Higiene</a></li>
+                    <li><a href="#" onclick="showSection('carreras')" class="hover:text-white">Recursos Humanos</a></li>
+                    <li><a href="#" onclick="showSection('carreras')" class="hover:text-white">Gestión Ambiental</a></li>
+                    <li><a href="#" onclick="showSection('carreras')" class="hover:text-white">Administración de Empresas</a></li>
+                    <li><a href="#" onclick="showSection('esja')" class="hover:text-white">Secundario ESJA Adultos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-xs">Accesos Rápido</h4>
+                <ul class="space-y-1.5">
+                    <li><a href="#" onclick="showSection('institucional')" class="hover:text-white">Sobre ISCE</a></li>
+                    <li><a href="#" onclick="showSection('blog')" class="hover:text-white">Novedades y Blog</a></li>
+                    <li><a href="https://campus.isce.edu.ar" target="_blank" class="hover:text-white font-bold text-blue-400">Campus Virtual Alumnos</a></li>
+                    <li><a href="#" onclick="showSection('contacto')" class="hover:text-white">Ubicación y Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-xs">Atención al Alumno</h4>
+                <p class="mb-2">San Juan 826, Paraná</p>
+                <p class="mb-2">Tel: (0343) 422-0096</p>
+                <a href="https://wa.me/5493434257344" target="_blank" class="inline-flex items-center gap-1.5 text-emerald-400 font-bold hover:underline">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Oficial
+                </a>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto mt-8 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-center">
+            <p>© <span id="year-copy"></span> Instituto Superior ISCE D-123. Todos los derechos reservados.</p>
+            <p class="text-slate-500">Paraná, Entre Ríos, Argentina.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL PLAN DE ESTUDIOS -->
+    <div id="modal-plan" class="fixed inset-0 bg-slate-900/70 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full p-6 space-y-4 max-h-[90vh] overflow-y-auto relative shadow-2xl">
+            <button onclick="closeModalPlan()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div id="modal-plan-content">
+                <!-- DYNAMIC CONTENT -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL INSCRIPCIÓN / CONSULTA -->
+    <div id="modal-inscripcion" class="fixed inset-0 bg-slate-900/70 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 space-y-4 relative shadow-2xl">
+            <button onclick="closeModalInscripcion()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <h3 class="text-xl font-bold text-slate-900">Inscripción / Consultar Aranceles</h3>
+            <p class="text-xs text-slate-500">Dejanos tus datos y te enviamos toda la información de cuotas y requisitos por WhatsApp o Email.</p>
+            
+            <form onsubmit="handleFormSubmit(event)" class="space-y-3">
+                <input type="text" required placeholder="Nombre completo" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm">
+                <input type="tel" required placeholder="Teléfono / WhatsApp" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm">
+                <input type="email" required placeholder="Email" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm">
+                <select id="modal-carrera-select" required class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm">
+                    <option value="Seguridad e Higiene">Tecnicatura en Seguridad e Higiene</option>
+                    <option value="Recursos Humanos">Tecnicatura en RRHH</option>
+                    <option value="Gestión Ambiental">Tecnicatura en Gestión Ambiental</option>
+                    <option value="Administración">Tecnicatura en Administración</option>
+                    <option value="Comercio Internacional">Comercio Internacional</option>
+                    <option value="ESJA Secundario">Secundario ESJA Adultos</option>
+                </select>
+
+                <label class="flex items-start gap-2 cursor-pointer pt-1">
+                    <input type="checkbox" required class="mt-0.5 rounded text-blue-600 h-3.5 w-3.5">
+                    <span class="text-[11px] text-slate-500">Acepto términos de contacto según Ley 25.326.</span>
+                </label>
+
+                <button type="submit" class="w-full bg-blue-700 text-white font-bold py-2.5 rounded-lg hover:bg-blue-800 transition text-sm">
+                    Solicitar Información
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT APP LOGIC -->
+    <script>
+        // DATA CARRERAS
+        const CULTURA_CARRERAS = [
+            {
+                id: 'seguridad-higiene',
+                titulo: 'Tecnicatura Superior en Seguridad, Higiene y Ambiente en el Trabajo',
+                duracion: '3 Años',
+                tituloOficial: 'Técnico Superior en Seguridad, Higiene y Ambiente',
+                img: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80',
+                desc: 'Formate para evaluar riesgos, prevenir accidentes laborales e implementar programas de gestión ambiental obligatorios en industrias, obras y organismos públicos.',
+                plan: [
+                    '1° Año: Seguridad Laboral I, Salud Ocupacional, Química General, Psicosociología.',
+                    '2° Año: Ergonomía, Higiene Industrial, Estadística de Costos, Derecho Laboral.',
+                    '3° Año: Saneamiento Ambiental, Práctica Profesionalizante III, Ética y Deontología.'
+                ]
+            },
+            {
+                id: 'rrhh',
+                titulo: 'Tecnicatura Superior en Administración de Recursos Humanos',
+                duracion: '3 Años',
+                tituloOficial: 'Técnico Superior en Recursos Humanos',
+                img: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=600&q=80',
+                desc: 'Liderá la gestión del talento, procesos de selección, liquidación de haberes y clima laboral en pymes, empresas multinacionales y sector público.',
+                plan: [
+                    '1° Año: Administración General, Relaciones Laborales, Psicología Social, Informática.',
+                    '2° Año: Selección de Personal, Liquidación de Sueldos, Comunicación Institucional.',
+                    '3° Año: Capacitación y Desarrollo, Práctica Profesionalizante, Derecho del Trabajo.'
+                ]
+            },
+            {
+                id: 'gestion-ambiental',
+                titulo: 'Tecnicatura Superior en Gestión Ambiental',
+                duracion: '3 Años',
+                tituloOficial: 'Técnico Superior en Gestión Ambiental',
+                img: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80',
+                desc: 'Desarrollá proyectos sustentables, auditorías ecológicas y tratamiento de residuos industriales adaptados a la legislación vigente de Entre Ríos.',
+                plan: [
+                    '1° Año: Ecología General, Biología, Química Ambiental, Geografía Regional.',
+                    '2° Año: Evaluación de Impacto Ambiental, Legislación Ambiental, Biotecnología.',
+                    '3° Año: Auditorías Ambientales, Práctica Profesionalizante, Formación de Proyectos.'
+                ]
+            },
+            {
+                id: 'administracion',
+                titulo: 'Tecnicatura Superior en Administración de Empresas',
+                duracion: '3 Años',
+                tituloOficial: 'Técnico Superior en Administración',
+                img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80',
+                desc: 'Dominá el área financiera, contable, administrativa y estratégica para dirigir emprendimientos propios o liderar áreas gerenciales.',
+                plan: [
+                    '1° Año: Contabilidad I, Principios de Economía, Matemática Financiera, Mkt.',
+                    '2° Año: Costos, Derecho Comercial, Liquidación de Impuestos, Sistemas de Info.',
+                    '3° Año: Finanzas Corporativas, Práctica Profesional, Plan de Negocios.'
+                ]
+            },
+            {
+                id: 'comercio-internacional',
+                titulo: 'Tecnicatura Superior en Comercio Internacional',
+                duracion: '3 Años',
+                tituloOficial: 'Técnico Superior en Comercio Internacional',
+                img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80',
+                desc: 'Especializate en despacho aduanero, logística internacional de cargas, análisis de mercados externos y normativas de importación/exportación.',
+                plan: [
+                    '1° Año: Introducción al Comercio Exterior, Geografía Económica, Derecho Aduanero.',
+                    '2° Año: Logística y Transporte Internacional, Operativa Bancaria, Inglés Técnico.',
+                    '3° Año: Clasificación Arancelaria, Práctica Profesionalizante en Comercio Exterior.'
+                ]
+            },
+            {
+                id: 'servicios-salud',
+                titulo: 'Tecnicatura en Marketing y Servicios de Salud',
+                duracion: '3 Años',
+                tituloOficial: 'Técnico Superior en Mkt y Gestión de Salud',
+                img: 'https://images.unsplash.com/photo-1504813184591-01552f310fd5?auto=format&fit=crop&w=600&q=80',
+                desc: 'Gestioná la comercialización y administración eficiente en sanatorios, clínicas, centros médicos y empresas de medicina prepaga u obras sociales.',
+                plan: [
+                    '1° Año: Administración de Salud, Marketing Basico, Sistemas Sanitarios.',
+                    '2° Año: Auditoría Médica Institucional, Gestión de Obras Sociales.',
+                    '3° Año: Plan de Marketing Sanitario, Prácticas en Clínicas/Sanatorios.'
+                ]
+            }
+        ];
+
+        // INIT DATES & CALCULATIONS
+        const fundacionYear = 1993;
+        const currentYear = new Date().getFullYear();
+        const yearsTrajectory = currentYear - fundacionYear;
+
+        document.getElementById('years-calc').innerText = yearsTrajectory;
+        document.querySelectorAll('.years-calc-val').forEach(el => el.innerText = yearsTrajectory);
+        document.getElementById('year-copy').innerText = currentYear;
+
+        // RENDER CARRERAS
+        function renderCarreras() {
+            const gridHome = document.getElementById('carreras-grid-home');
+            const gridFull = document.getElementById('carreras-grid-full');
+
+            const createCardHTML = (c) => `
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+                    <img src="${c.img}" alt="${c.titulo}" class="h-44 w-full object-cover">
+                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase">${c.duracion} · Título Oficial</span>
+                            <h3 class="text-lg font-bold text-slate-900 leading-snug">${c.titulo}</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">${c.desc}</p>
+                        </div>
+                        <div class="pt-2 flex items-center justify-between gap-2 border-t border-slate-100">
+                            <button onclick="openModalPlan('${c.id}')" class="text-xs text-blue-700 font-bold hover:underline flex items-center gap-1">
+                                Ver Plan <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                            </button>
+                            <button onclick="openModalInscripcion('${c.titulo}')" class="bg-slate-900 hover:bg-blue-700 text-white text-xs font-bold px-3 py-1.5 rounded transition">
+                                Consultar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            gridHome.innerHTML = CULTURA_CARRERAS.slice(0, 3).map(createCardHTML).join('');
+            gridFull.innerHTML = CULTURA_CARRERAS.map(createCardHTML).join('');
+            lucide.createIcons();
+        }
+
+        // SPA NAVIGATION
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(sec => sec.classList.add('hidden'));
+            const active = document.getElementById(`sec-${sectionId}`);
+            if (active) active.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // MODALS
+        function openModalPlan(carreraId) {
+            const c = CULTURA_CARRERAS.find(x => x.id === carreraId);
+            if (!c) return;
+
+            const modalContent = document.getElementById('modal-plan-content');
+            modalContent.innerHTML = `
+                <div class="space-y-4">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded">Título Oficial - Validez Nacional</span>
+                    <h2 class="text-2xl font-bold text-slate-900">${c.titulo}</h2>
+                    <p class="text-sm text-slate-600">${c.desc}</p>
+                    <div class="border-t border-slate-200 pt-4">
+                        <h4 class="font-bold text-slate-900 mb-2 text-sm">Estructura del Plan de Estudios:</h4>
+                        <ul class="space-y-2">
+                            ${c.plan.map(p => `<li class="text-xs text-slate-700 bg-slate-50 p-2.5 rounded border border-slate-200">${p}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="pt-4 flex justify-end gap-2">
+                        <button onclick="closeModalPlan()" class="bg-slate-200 text-slate-800 text-xs font-bold px-4 py-2 rounded-lg">Cerrar</button>
+                        <button onclick="closeModalPlan(); openModalInscripcion('${c.titulo}')" class="bg-blue-700 text-white text-xs font-bold px-4 py-2 rounded-lg">Consultar Aranceles</button>
+                    </div>
+                </div>
+            `;
+            document.getElementById('modal-plan').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeModalPlan() {
+            document.getElementById('modal-plan').classList.add('hidden');
+        }
+
+        function openModalInscripcion(carreraName = '') {
+            if (carreraName) {
+                const select = document.getElementById('modal-carrera-select');
+                for (let option of select.options) {
+                    if (option.text.toLowerCase().includes(carreraName.toLowerCase())) {
+                        option.selected = true;
+                        break;
+                    }
+                }
+            }
+            document.getElementById('modal-inscripcion').classList.remove('hidden');
+        }
+
+        function closeModalInscripcion() {
+            document.getElementById('modal-inscripcion').classList.add('hidden');
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu consulta! Un asesor del Instituto ISCE se pondrá en contacto a la brevedad por WhatsApp/Email.');
+            closeModalInscripcion();
+        }
+
+        // INITIAL LOAD
+        window.onload = function() {
+            renderCarreras();
+            lucide.createIcons();
+        };
+    </script>
+</body>
+</html>
