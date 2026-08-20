@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instituto Superior ISCE | Carreras Terciarias y Secundario en Paraná</title>
-    <meta name="description" content="Estudiá tecnicaturas superiores con título oficial en Paraná o finalizá el secundario para adultos (ESJA). Más de 30 años de trayectoria. ¡Inscribite hoy!">
-    <meta name="keywords" content="carreras parana, terciarios parana, seguridad e higiene parana, esja parana, secundario adultos entre rios, isce">
+    <title>Instituto Superior ISCE | Inscripciones Abiertas 2027 en Paraná</title>
+    <meta name="description" content="Estudiá una Tecnicatura Superior con Título de Validez Nacional en Paraná o finalizá el secundario para adultos (ESJA). Más de 33 años de trayectoria. Cursado vespertino.">
+    <meta name="keywords" content="carreras parana, terciarios parana, seguridad e higiene parana, esja parana, secundario adultos entre rios, isce, ciclo lectivo 2027">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -39,7 +39,7 @@
 
     <style>
         .gradient-hero {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 58, 138, 0.85) 100%), 
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.88) 0%, rgba(30, 58, 138, 0.88) 100%), 
                         url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
         }
         .smooth-scroll { scroll-behavior: smooth; }
@@ -65,11 +65,11 @@
         </div>
     </div>
 
-    <!-- MAIN HEADER & NAVIGATION (DESAHOGADO, MENU IZQUIERDA, LOGO DERECHA) -->
+    <!-- MAIN HEADER & NAVIGATION -->
     <header class="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-22 py-3">
             
-            <!-- DESKTOP NAV (LEFT SIDE WITH GENEROUS SPACING) -->
+            <!-- DESKTOP NAV -->
             <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-700">
                 <button onclick="showSection('inicio')" class="hover:text-blue-700 transition py-2 border-b-2 border-transparent hover:border-blue-700">Inicio</button>
                 <button onclick="showSection('institucional')" class="hover:text-blue-700 transition py-2 border-b-2 border-transparent hover:border-blue-700">Institucional</button>
@@ -82,40 +82,27 @@
                 </a>
             </nav>
 
-            <!-- LOGO INSTITUCIONAL (RIGHT SIDE) -->
+            <!-- LOGO INSTITUCIONAL -->
             <a href="#" onclick="showSection('inicio')" class="flex items-center gap-3 group ml-auto lg:ml-0">
                 <div class="flex flex-col text-right">
                     <span class="font-black text-slate-900 leading-tight group-hover:text-blue-700 transition text-lg tracking-tight">Instituto ISCE</span>
                     <span class="text-[11px] text-slate-500 font-semibold tracking-wide uppercase">D-123 · Superior y ESJA</span>
                 </div>
-                <!-- LOGO EMBLEMA OFICIAL ISCE (SVG VECTORIAL + COMPATIBILIDAD logo.png) -->
+                <!-- LOGO EMBLEMA OFICIAL ISCE -->
                 <div class="relative w-16 h-16 flex-shrink-0">
                     <img src="logo.png" alt="Instituto ISCE Logo" class="w-16 h-16 object-contain rounded-full shadow-sm" onerror="this.style.display='none'; document.getElementById('svg-logo-badge').classList.remove('hidden')">
                     <div id="svg-logo-badge" class="w-16 h-16 rounded-full border-2 border-red-600 bg-white shadow-sm flex items-center justify-center p-0.5 overflow-hidden">
                         <svg viewBox="0 0 100 100" class="w-full h-full">
-                            <!-- Outer Red Ring -->
                             <circle cx="50" cy="50" r="46" fill="none" stroke="#DC2626" stroke-width="4.5" />
-                            
-                            <!-- Window Background Grid -->
                             <rect x="25" y="24" width="50" height="26" fill="#93C5FD" opacity="0.6" stroke="#475569" stroke-width="1.5" />
                             <line x1="50" y1="24" x2="50" y2="50" stroke="#475569" stroke-width="1.5" />
                             <line x1="25" y1="37" x2="75" y2="37" stroke="#475569" stroke-width="1.5" />
-                            
-                            <!-- Golden Open Book -->
                             <path d="M22 45 L50 36 L78 45 L78 52 L50 44 L22 52 Z" fill="#FACD15" stroke="#A16207" stroke-width="1.5" />
                             <path d="M50 36 L50 44" stroke="#A16207" stroke-width="1.5" />
-                            
-                            <!-- Flame -->
                             <path d="M50 14 Q58 28 50 37 Q42 28 50 14 Z" fill="#F97316" />
                             <path d="M50 20 Q54 29 50 35 Q46 29 50 20 Z" fill="#FACC15" />
-                            
-                            <!-- Pen -->
                             <line x1="68" y1="20" x2="62" y2="44" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round" />
-                            
-                            <!-- Text I.S.C.E. -->
                             <text x="50" y="63" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="13" fill="#1E3A8A" letter-spacing="0.5">I.S.C.E.</text>
-                            
-                            <!-- Text INSTITUTO SUPERIOR DE CAPACITACION EMPRESARIA -->
                             <text x="50" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="5" fill="#000000">INSTITUTO SUPERIOR</text>
                             <text x="50" y="81" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="4.8" fill="#000000">DE CAPACITACIÓN</text>
                             <text x="50" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="4.8" fill="#000000">EMPRESARIA</text>
@@ -152,20 +139,20 @@
             <!-- HERO BANNER -->
             <div class="gradient-hero text-white py-20 md:py-28 px-4">
                 <div class="max-w-5xl mx-auto text-center space-y-6">
-                    <span class="inline-block bg-blue-500/30 text-blue-200 text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-blue-400/30">
-                        🎓 Inscripciones Abiertas · Ciclo Lectivo D-123 en Paraná
+                    <span class="inline-block bg-blue-500/30 text-blue-200 text-xs md:text-sm font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border border-blue-400/40 shadow-sm">
+                        🎓 Inscripciones Abiertas · Ciclo Lectivo 2027
                     </span>
-                    <h1 class="text-3xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
-                        Impulsá tu Futuro Profesional con Títulos de Validez Nacional
+                    <h1 class="text-3xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-white drop-shadow-sm">
+                        Estudiá una Tecnicatura Superior con Título de Validez Nacional
                     </h1>
                     <p class="text-lg md:text-xl text-slate-200 max-w-3xl mx-auto font-normal leading-relaxed">
-                        Más de <span id="years-calc" class="font-bold text-white">30</span> años formando técnicos superiores y egresados secundarios en Paraná. Cursado presencial vespertino diseñado para adaptar tu estudio al trabajo diario.
+                        Sumate a una institución educativa con más de <span id="years-calc" class="font-bold text-white">33</span> años de trayectoria en Paraná. Ofrecemos carreras terciarias y tecnicaturas superiores con cursado presencial vespertino, ideales para quienes desean estudiar y trabajar al mismo tiempo.
                     </p>
                     <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
                         <button onclick="openModalInscripcion()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 text-base flex items-center justify-center gap-2">
-                            <i data-lucide="edit-3" class="w-5 h-5"></i> Inscribirme Ahora
+                            <i data-lucide="edit-3" class="w-5 h-5"></i> Inscribirme Ahora (2027)
                         </button>
-                        <a href="https://wa.me/5493434257344?text=Hola!%20Quiero%20consultar%20aranceles%20e%20información%20de%20carreras" target="_blank" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 text-base flex items-center justify-center gap-2">
+                        <a href="https://wa.me/5493434257344?text=Hola!%20Quiero%20consultar%20por%20las%20inscripciones%20al%20Ciclo%20Lectivo%202027" target="_blank" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 text-base flex items-center justify-center gap-2">
                             <i data-lucide="message-circle" class="w-5 h-5"></i> Consultar Aranceles (WhatsApp)
                         </a>
                     </div>
@@ -176,16 +163,16 @@
             <div class="bg-blue-900 text-white py-10 px-4 shadow-inner">
                 <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                     <div class="p-4">
-                        <div class="text-3xl md:text-4xl font-extrabold text-blue-300 mb-1">+<span class="years-calc-val">30</span> Años</div>
+                        <div class="text-3xl md:text-4xl font-extrabold text-blue-300 mb-1">+<span class="years-calc-val">33</span> Años</div>
                         <div class="text-xs md:text-sm text-slate-300 font-medium">De Trayectoria Educativa</div>
                     </div>
                     <div class="p-4">
                         <div class="text-3xl md:text-4xl font-extrabold text-blue-300 mb-1">100%</div>
-                        <div class="text-xs md:text-sm text-slate-300 font-medium">Títulos de Validez Nacional</div>
+                        <div class="text-xs md:text-sm text-slate-300 font-medium">Validez Nacional Oficial</div>
                     </div>
                     <div class="p-4">
-                        <div class="text-3xl md:text-4xl font-extrabold text-blue-300 mb-1">3 Años</div>
-                        <div class="text-xs md:text-sm text-slate-300 font-medium">Duración Tecnicaturas</div>
+                        <div class="text-3xl md:text-4xl font-extrabold text-blue-300 mb-1">Vespertino</div>
+                        <div class="text-xs md:text-sm text-slate-300 font-medium">Ideal para Estudiar y Trabajar</div>
                     </div>
                     <div class="p-4">
                         <div class="text-3xl md:text-4xl font-extrabold text-blue-300 mb-1">ESJA</div>
@@ -197,7 +184,7 @@
             <!-- CARRERAS RESUMEN -->
             <div class="py-16 px-4 max-w-7xl mx-auto">
                 <div class="text-center max-w-3xl mx-auto mb-12">
-                    <h2 class="text-3xl font-extrabold text-slate-900 mb-3">Oferta Académica Destacada</h2>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mb-3">Oferta Académica 2027</h2>
                     <p class="text-slate-600 text-base">Planes de estudio prácticos diseñados para insertarte rápidamente en el mercado laboral técnico y empresarial.</p>
                 </div>
 
@@ -226,22 +213,22 @@
                                 <div class="flex items-start gap-3">
                                     <div class="bg-blue-100 text-blue-700 p-2 rounded-lg mt-1"><i data-lucide="award" class="w-5 h-5"></i></div>
                                     <div>
-                                        <h4 class="font-bold text-slate-900">Títulos Oficiales Oficiales (D-123)</h4>
-                                        <p class="text-sm text-slate-600">Aprobados por el Consejo General de Educación con alcance nacional.</p>
+                                        <h4 class="font-bold text-slate-900">Títulos Oficiales (D-123)</h4>
+                                        <p class="text-sm text-slate-600">Aprobados por el Consejo General de Educación con validez nacional.</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start gap-3">
                                     <div class="bg-blue-100 text-blue-700 p-2 rounded-lg mt-1"><i data-lucide="clock" class="w-5 h-5"></i></div>
                                     <div>
                                         <h4 class="font-bold text-slate-900">Horarios Compatibles con el Trabajo</h4>
-                                        <p class="text-sm text-slate-600">Cursado vespertino pensado para quienes trabajan o tienen responsabilidades diarias.</p>
+                                        <p class="text-sm text-slate-600">Cursado presencial vespertino pensado para quienes trabajan o tienen responsabilidades diarias.</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start gap-3">
                                     <div class="bg-blue-100 text-blue-700 p-2 rounded-lg mt-1"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
                                     <div>
                                         <h4 class="font-bold text-slate-900">Sede Céntrica Accesible</h4>
-                                        <p class="text-sm text-slate-600">Ubicación privileged en el centro de la ciudad de Paraná (San Juan 826).</p>
+                                        <p class="text-sm text-slate-600">Ubicación privilegiada en el centro de la ciudad de Paraná (San Juan 826).</p>
                                     </div>
                                 </div>
                             </div>
@@ -249,7 +236,7 @@
                         <div class="relative">
                             <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Alumnos ISCE Paraná" class="rounded-2xl shadow-xl w-full object-cover h-96">
                             <div class="absolute -bottom-6 -left-6 bg-blue-900 text-white p-6 rounded-xl shadow-lg hidden sm:block max-w-xs">
-                                <p class="text-2xl font-black text-blue-300 mb-1">Inscripciones Abiertas</p>
+                                <p class="text-2xl font-black text-blue-300 mb-1">Inscripciones 2027</p>
                                 <p class="text-xs text-slate-300">Asegurá tu lugar para el próximo ciclo lectivo. Vacantes limitadas.</p>
                             </div>
                         </div>
@@ -263,7 +250,7 @@
             <div class="bg-slate-900 text-white py-12 px-4">
                 <div class="max-w-5xl mx-auto text-center">
                     <h1 class="text-3xl md:text-4xl font-extrabold">Institucional - ISCE D-123</h1>
-                    <p class="text-slate-300 mt-2 text-base">Más de tres décadas formando profesionales con valores y excelencia en Entre Ríos.</p>
+                    <p class="text-slate-300 mt-2 text-base">Más de 33 años formando profesionales con valores y excelencia en Entre Ríos.</p>
                 </div>
             </div>
 
@@ -276,7 +263,7 @@
                             Fundado en Paraná, el **Instituto Superior de Capacitación Empresaria (D-123)** nació con la firme convicción de brindar respuestas educativas concretas a las necesidades del sector productivo y gubernamental de la región.
                         </p>
                         <p class="text-slate-600 leading-relaxed">
-                            A lo largo de más de 30 años de labor ininterrumpida, miles de graduados han pasado por nuestras aulas, consolidándose como técnicos superiores de excelencia en empresas, organismos públicos y emprendimientos propios.
+                            A lo largo de más de 33 años de labor ininterrumpida, miles de graduados han pasado por nuestras aulas, consolidándose como técnicos superiores de excelencia en empresas, organismos públicos y emprendimientos propios.
                         </p>
                     </div>
                     <div>
@@ -308,8 +295,8 @@
         <section id="sec-carreras" class="content-section hidden">
             <div class="bg-slate-900 text-white py-12 px-4">
                 <div class="max-w-5xl mx-auto text-center">
-                    <h1 class="text-3xl md:text-4xl font-extrabold">Carreras Terciarias Superiores</h1>
-                    <p class="text-slate-300 mt-2 text-base">Títulos Oficiales con Validez Nacional. Duración 3 años.</p>
+                    <h1 class="text-3xl md:text-4xl font-extrabold">Carreras Terciarias Superiores 2027</h1>
+                    <p class="text-slate-300 mt-2 text-base">Títulos Oficiales con Validez Nacional. Cursado Vespertino. Duración 3 años.</p>
                 </div>
             </div>
 
@@ -426,14 +413,14 @@
             <div class="bg-slate-900 text-white py-12 px-4">
                 <div class="max-w-5xl mx-auto text-center">
                     <h1 class="text-3xl md:text-4xl font-extrabold">Contactate con el Instituto ISCE</h1>
-                    <p class="text-slate-300 mt-2 text-base">Estamos listos para asesorarte sobre inscripciones, equivalencias y promociones vigentes.</p>
+                    <p class="text-slate-300 mt-2 text-base">Inscripciones Abiertas Ciclo Lectivo 2027. Dejanos tu consulta.</p>
                 </div>
             </div>
 
             <div class="py-16 px-4 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- FORM -->
                 <div class="bg-white p-8 rounded-xl shadow-md border border-slate-200">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-2">Envianos tu Consulta</h2>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-2">Envianos tu Consulta (Ciclo 2027)</h2>
                     <p class="text-xs text-slate-500 mb-6">Te respondemos en menos de 24 horas hábiles directamente a tu WhatsApp o correo.</p>
                     <form onsubmit="handleFormSubmit(event)" class="space-y-4">
                         <div>
@@ -465,7 +452,7 @@
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Mensaje / Consulta</label>
-                            <textarea rows="3" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-blue-600 outline-none" placeholder="Consultar por aranceles, requisitos u horarios..."></textarea>
+                            <textarea rows="3" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-blue-600 outline-none" placeholder="Consultar por aranceles, requisitos u horarios del ciclo 2027..."></textarea>
                         </div>
 
                         <!-- LEY 25.326 PRIVACY CHECKBOX -->
@@ -595,7 +582,7 @@
             <button onclick="closeModalInscripcion()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
-            <h3 class="text-xl font-bold text-slate-900">Inscripción / Consultar Aranceles</h3>
+            <h3 class="text-xl font-bold text-slate-900">Inscripción Ciclo Lectivo 2027</h3>
             <p class="text-xs text-slate-500">Dejanos tus datos y te enviamos toda la información de cuotas y requisitos por WhatsApp o Email.</p>
             
             <form onsubmit="handleFormSubmit(event)" class="space-y-3">
@@ -617,7 +604,7 @@
                 </label>
 
                 <button type="submit" class="w-full bg-blue-700 text-white font-bold py-2.5 rounded-lg hover:bg-blue-800 transition text-sm">
-                    Solicitar Información
+                    Solicitar Información 2027
                 </button>
             </form>
         </div>
@@ -710,7 +697,7 @@
         // INIT DATES & CALCULATIONS
         const fundacionYear = 1993;
         const currentYear = new Date().getFullYear();
-        const yearsTrajectory = currentYear - fundacionYear;
+        const yearsTrajectory = Math.max(33, currentYear - fundacionYear);
 
         document.getElementById('years-calc').innerText = yearsTrajectory;
         document.querySelectorAll('.years-calc-val').forEach(el => el.innerText = yearsTrajectory);
@@ -735,7 +722,7 @@
                                 Ver Plan <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
                             </button>
                             <button onclick="openModalInscripcion('${c.titulo}')" class="bg-slate-900 hover:bg-blue-700 text-white text-xs font-bold px-3 py-1.5 rounded transition">
-                                Consultar
+                                Consultar 2027
                             </button>
                         </div>
                     </div>
@@ -779,7 +766,7 @@
                     </div>
                     <div class="pt-4 flex justify-end gap-2">
                         <button onclick="closeModalPlan()" class="bg-slate-200 text-slate-800 text-xs font-bold px-4 py-2 rounded-lg">Cerrar</button>
-                        <button onclick="closeModalPlan(); openModalInscripcion('${c.titulo}')" class="bg-blue-700 text-white text-xs font-bold px-4 py-2 rounded-lg">Consultar Aranceles</button>
+                        <button onclick="closeModalPlan(); openModalInscripcion('${c.titulo}')" class="bg-blue-700 text-white text-xs font-bold px-4 py-2 rounded-lg">Consultar Aranceles 2027</button>
                     </div>
                 </div>
             `;
@@ -810,7 +797,7 @@
 
         function handleFormSubmit(e) {
             e.preventDefault();
-            alert('¡Gracias por tu consulta! Un asesor del Instituto ISCE se pondrá en contacto a la brevedad por WhatsApp/Email.');
+            alert('¡Gracias por tu consulta para el Ciclo Lectivo 2027! Un asesor del Instituto ISCE se pondrá en contacto a la brevedad por WhatsApp/Email.');
             closeModalInscripcion();
         }
 
