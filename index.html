@@ -88,10 +88,39 @@
                     <span class="font-black text-slate-900 leading-tight group-hover:text-blue-700 transition text-lg tracking-tight">Instituto ISCE</span>
                     <span class="text-[11px] text-slate-500 font-semibold tracking-wide uppercase">D-123 · Superior y ESJA</span>
                 </div>
-                <!-- LOGO IMAGE WITH AUTOMATIC FALLBACK -->
-                <img src="logo.png" alt="Instituto ISCE Logo" class="h-14 w-auto object-contain rounded-full shadow-sm border border-slate-100" onerror="this.style.display='none'; document.getElementById('logo-fallback-badge').classList.remove('hidden')">
-                <div id="logo-fallback-badge" class="hidden bg-blue-900 text-white p-2.5 rounded-xl font-black text-xl tracking-wider shadow">
-                    ISCE
+                <!-- LOGO EMBLEMA OFICIAL ISCE (SVG VECTORIAL + COMPATIBILIDAD logo.png) -->
+                <div class="relative w-16 h-16 flex-shrink-0">
+                    <img src="logo.png" alt="Instituto ISCE Logo" class="w-16 h-16 object-contain rounded-full shadow-sm" onerror="this.style.display='none'; document.getElementById('svg-logo-badge').classList.remove('hidden')">
+                    <div id="svg-logo-badge" class="w-16 h-16 rounded-full border-2 border-red-600 bg-white shadow-sm flex items-center justify-center p-0.5 overflow-hidden">
+                        <svg viewBox="0 0 100 100" class="w-full h-full">
+                            <!-- Outer Red Ring -->
+                            <circle cx="50" cy="50" r="46" fill="none" stroke="#DC2626" stroke-width="4.5" />
+                            
+                            <!-- Window Background Grid -->
+                            <rect x="25" y="24" width="50" height="26" fill="#93C5FD" opacity="0.6" stroke="#475569" stroke-width="1.5" />
+                            <line x1="50" y1="24" x2="50" y2="50" stroke="#475569" stroke-width="1.5" />
+                            <line x1="25" y1="37" x2="75" y2="37" stroke="#475569" stroke-width="1.5" />
+                            
+                            <!-- Golden Open Book -->
+                            <path d="M22 45 L50 36 L78 45 L78 52 L50 44 L22 52 Z" fill="#FACD15" stroke="#A16207" stroke-width="1.5" />
+                            <path d="M50 36 L50 44" stroke="#A16207" stroke-width="1.5" />
+                            
+                            <!-- Flame -->
+                            <path d="M50 14 Q58 28 50 37 Q42 28 50 14 Z" fill="#F97316" />
+                            <path d="M50 20 Q54 29 50 35 Q46 29 50 20 Z" fill="#FACC15" />
+                            
+                            <!-- Pen -->
+                            <line x1="68" y1="20" x2="62" y2="44" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round" />
+                            
+                            <!-- Text I.S.C.E. -->
+                            <text x="50" y="63" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="13" fill="#1E3A8A" letter-spacing="0.5">I.S.C.E.</text>
+                            
+                            <!-- Text INSTITUTO SUPERIOR DE CAPACITACION EMPRESARIA -->
+                            <text x="50" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="5" fill="#000000">INSTITUTO SUPERIOR</text>
+                            <text x="50" y="81" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="4.8" fill="#000000">DE CAPACITACIÓN</text>
+                            <text x="50" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="4.8" fill="#000000">EMPRESARIA</text>
+                        </svg>
+                    </div>
                 </div>
             </a>
 
